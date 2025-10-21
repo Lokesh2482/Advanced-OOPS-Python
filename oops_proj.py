@@ -1,9 +1,29 @@
 class chatbook:
+
+
+    __user_id = 0
     def __init__(self):
+        self.id = chatbook.__user_id
+        chatbook.__user_id +=1
+        self.__name = "Default User"
         self.username = ''
         self.password = ''
         self.loggedin = False
-        self.menu()#As soon as object gets created I want the user to see the menu as well
+        #self.menu()#As soon as object gets created I want the user to see the menu as well
+    @staticmethod
+    #no need to use self in static method
+
+    def get_id():
+        return chatbook.__user_id
+    
+    def set_id(val):
+        chatbook.__user_id = val
+    
+    def get_name(self):
+        return self.__name
+    def set_name(self,value):
+        self.__name = value
+
 
     def menu(self):
         user_input = input("""welcome to ChatBook!! How would you like to proceed?
